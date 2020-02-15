@@ -4,13 +4,13 @@ import { NormalizedObjects } from './types/default'
 import { User } from './redux/users'
 
 const userSchema = new schema.Entity('users', {}, { idAttribute: 'email' })
-const userListSchena = { results: [userSchema] }
+const userListSchema = { results: [userSchema] }
 
 export const Api = {
   fetchUsers: async (): Promise<NormalizedObjects<User>> => {
     const response = await fetch('https://randomuser.me/api/?results=30')
     const users = await response.json()
-    const normalized = normalize(users, userListSchena)
+    const normalized = normalize(users, userListSchema)
 
     return {
       byId: normalized.entities.users,
