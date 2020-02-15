@@ -8,13 +8,14 @@ export interface User extends HasId {
   email: string
 }
 
-// Reducers
+// State
 const initialState: FetchableNormalizeObject<User> = {
   isFetching: false,
   byId: {},
   allIds: [],
 }
 
+// Reducers
 const usersSlice = createSlice({
   name: 'users',
   initialState,
