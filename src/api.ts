@@ -13,7 +13,7 @@ export const Api = {
     const normalized = normalize(users, userListSchena)
 
     return {
-      byId: normalized.entities.users as any,
+      byId: normalized.entities.users,
       allIds: normalized.result.results,
     }
   },
